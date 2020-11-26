@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/contactsListFragment">
+
+    <fragment
+        android:id="@+id/contactDetailsFragment"
+        android:name="com.orangesoft.addressbook.ui.main.ContactDetailsFragment"
+        android:label="contact_details_fragment"
+        tools:layout="@layout/contact_details_fragment" />
+    <fragment
+        android:id="@+id/contactsListFragment"
+        android:name="com.orangesoft.addressbook.ui.main.ContactsListFragment"
+        android:label="contacts_list_fragment"
+        tools:layout="@layout/contacts_list_fragment">
+        <argument
+            android:name="contact"
+            app:argType="com.orangesoft.addressbook.data.Contact"/>
+        <action
+            android:id="@+id/action_contactsListFragment_to_contactDetailsFragment"
+            app:destination="@id/contactDetailsFragment" />
+    </fragment>
+</navigation>
